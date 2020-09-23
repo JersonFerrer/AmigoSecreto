@@ -30,7 +30,8 @@ var list = [
     "TANG CANTILLO JULIO CESAR",
     "VARELA MERCADO CARLOS ANDRES"
 ];
-var show = true;
+var showList = true;
+var showNew = false;
 
 function deploylist() {
     for(let i=0; i<list.length; i++){
@@ -48,17 +49,27 @@ function showlist() {
     let button = document.getElementById('showlist');
     let list = document.getElementById('list');
 
-    if(show){
+    if(showList){
         list.style.display='none';
         button.innerText = 'Mostrar Lista';
-        show=false;
+        showList=false;
     }else{
         list.style.display='block';
         button.innerText = 'Ocultar Lista';
-        show=true;
+        showList=true;
     }
 }
+function showNewInput() {
+    let New = document.getElementById('New');
 
+    if(showNew){
+        New.style.display='none';
+        showNew=false;
+    }else{
+        New.style.display='block';
+        showNew=true;
+    }
+}
 deploylist();
 var index = 0;
 
@@ -67,7 +78,6 @@ function addEvent() {
         index = parseInt(this.getElementsByClassName('id')[0].innerText);
         $('.table-row').removeClass('selected');
         $(this).addClass('selected');
-        console.log(index-1);
         $('#remove').removeAttr('disabled');
       });
 }
@@ -75,10 +85,24 @@ addEvent();
 
 function deleteElement() {
     var deleted = list.splice(index-1, 1);
-    console.log(deleted);
-    console.log(list)
+    alert('Persona Eliminada Corectamente');
     clearlist();
     deploylist();
     $('#remove').attr('disabled', 'true');
     addEvent();
+}
+
+function addNew() {
+    let name = document.getElementById('NewName');
+
+    if(name.value != ""){
+        list.push(name.value.toUpperCase());
+        name.value = "";
+        alert('Persona Agregada Corectamente');
+        clearlist();
+        deploylist();
+        addEvent();
+    }else {
+        alert('El campo Nombre esta vacio');
+    }
 }
