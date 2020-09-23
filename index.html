@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Amigo Secreto</title>
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1>Amigo Secreto</h1>
+            <h3>Animate a Jugar</h3>
+        </header>
+
+        <div class="content">
+            <article>
+                <div>
+                    <button type="button" id="showlist" onclick="showlist()">Ocultar Lista</button>
+                </div>
+    
+                <div id="list">
+                    <div class="list-controls">
+                        <button type="button" id="add">Agregar</button>
+                        <button type="button" id="remove">Eliminar</button>
+                    </div>
+                    <div class="table display-block text-center" id="table">
+                        <div class="table-header display-flex justify-center">
+                            <div class="text-center border id">
+                                <h3>Id</h3>
+                            </div>
+                            <div class="text-center border name">
+                                <h3>Nombre</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/list.js"></script>
+</body>
+
+</html>

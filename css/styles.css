@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/*--------------------------GENERAL STYLES-------------------*/
+.display-flex {
+    display: flex;
+}
+.display-block {
+    display: block;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.justify-center {
+    justify-content: center;
+}
+.gray {
+    background-color: gray;
+}
+.border {
+    border: 1px solid #000;
+}
+button {
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+/*-------------------------HEADER STYLES---------------------*/
+header {
+    background-color: hotpink;
+    margin-bottom: 40px;
+    text-align: center;
+}
+/*-------------------------CONTENT STYLES---------------------*/
+.content {
+    padding: 0px 60px;
+}
+/*-------------------------TABLE STYLES---------------------*/
+.list-controls {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.list-controls button {
+    margin: 10px;
+}
+.table {
+    margin-bottom: 30px;
+}
+.table-row .id, .table-header .id {
+    width: 30px;
+    padding: 5px;
+}
+.table-row .name, .table-header .name {
+    width: 400px;
+    padding: 10px;
+}
+.table-row:hover .name, .table-row:hover .id{
+    cursor: pointer;
+    background-color: hotpink;
+}
