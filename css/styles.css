@@ -46,6 +46,18 @@ header {
 .list-controls button {
     margin: 10px;
 }
+.new-name {
+    display: none;
+    margin: 20px;
+}
+.new-name label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.new-name input{
+    height: 25px;
+    width: 300px;
+}
 .table {
     margin-bottom: 30px;
 }

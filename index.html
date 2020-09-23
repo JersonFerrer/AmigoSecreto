@@ -23,8 +23,13 @@
     
                 <div id="list">
                     <div class="list-controls">
-                        <button type="button" id="add">Agregar</button>
+                        <button type="button" id="Newbtn" onclick="showNewInput()">Nuevo</button>
                         <button type="button" id="remove" disabled onclick="deleteElement()">Eliminar</button>
+                    </div>
+                    <div class="new-name text-center" id="New">
+                        <label for="NewName">Nombre:</label>
+                        <input type="text" name="NewName" id="NewName">
+                        <button type="button" id="add" onclick="addNew()">Agregar</button>
                     </div>
                     <div class="table display-block text-center" id="table">
                         <div class="table-header display-flex justify-center">
