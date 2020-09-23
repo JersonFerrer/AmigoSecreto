@@ -34,7 +34,7 @@ var show = true;
 
 function deploylist() {
     for(let i=0; i<list.length; i++){
-        document.getElementById('table').innerHTML += 
+        document.getElementById('table-body').innerHTML += 
         '<div class="table-row display-flex justify-center">'+
          '<div class="border id">' + (i+1) + '</div>'+
          '<div class="border name text-left">'+ list[i] +'</div>' +
@@ -42,19 +42,7 @@ function deploylist() {
     }
 }
 function clearlist() {
-        document.getElementById('table').innerHTML = 
-        /*'<div class="table-header display-flex justify-center">'+
-        '<div class="text-center border id">'+
-        '<h3>Id</h3>'+
-        '</div>'+
-        '<div class="text-center border id">'+
-        '<h3>Nombre</h3>'+
-        '</div>'+
-        '</div>'+*/
-        '<div class="table-row display-flex justify-center">'+
-         '<div class="border id">' + '</div>'+
-         '<div class="border name text-left">' + '</div>' +
-         '</div>';
+        document.getElementById('table-body').innerHTML = '<div class="table-body"></div>';
 }
 function showlist() {
     let button = document.getElementById('showlist');
@@ -72,12 +60,23 @@ function showlist() {
 }
 
 deploylist();
+addEvent();
+var index = 0;
 
-$( ".table-row" ).click(function() {
-    var index = parseInt(this.getElementsByClassName('id')[0].innerText);
-    console.log(index-1);
-    list.splice(index-1, 1);
-    console.log(list);
+function addEvent() {
+    $(".table-row").click(function() {
+        index = parseInt(this.getElementsByClassName('id')[0].innerText);
+        $('.table-row').removeClass('selected');
+        $(this).addClass('selected');
+        console.log(index-1);
+      });
+}
+
+function deleteElement() {
+    var deleted = list.splice(index-1, 1);
+    console.log(deleted);
+    console.log(list)
     clearlist();
     deploylist();
-  });
+    addEvent();
+}
