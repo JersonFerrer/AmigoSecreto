@@ -60,7 +60,6 @@ function showlist() {
 }
 
 deploylist();
-addEvent();
 var index = 0;
 
 function addEvent() {
@@ -69,8 +68,10 @@ function addEvent() {
         $('.table-row').removeClass('selected');
         $(this).addClass('selected');
         console.log(index-1);
+        $('#remove').removeAttr('disabled');
       });
 }
+addEvent();
 
 function deleteElement() {
     var deleted = list.splice(index-1, 1);
@@ -78,5 +79,6 @@ function deleteElement() {
     console.log(list)
     clearlist();
     deploylist();
+    $('#remove').attr('disabled', 'true');
     addEvent();
 }
