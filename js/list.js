@@ -43,7 +43,7 @@ function deploylist() {
     }
 }
 function clearlist() {
-        document.getElementById('table-body').innerHTML = '<div class="table-body"></div>';
+    document.getElementById('table-body').innerHTML = '<div class="table-body"></div>';
 }
 function showlist() {
     let button = document.getElementById('showlist');
@@ -59,6 +59,7 @@ function showlist() {
         showList=true;
     }
 }
+
 function showNewInput() {
     let New = document.getElementById('New');
 
@@ -69,7 +70,31 @@ function showNewInput() {
         New.style.display='block';
         showNew=true;
     }
+
+    var salio = [];
+    var i=0;
+    var listSize =  list.length;
+    console.log(listSize);
+    while(salio.length < listSize){
+        var nuevo = parseInt(Math.random()*listSize);
+        if(salio.indexOf(list[nuevo]) != -1){
+            console.log('ya salio');
+        }else{
+            salio.push(list[nuevo]);
+            if(list[i] != salio[i]){
+                console.log(list[i]);
+                console.log(salio[i]);
+                console.log('--------------------------');
+
+                document.getElementById('gameContainer').innerHTML += 
+                '<div class="border">'+list[i]+'------>'+salio[i]+'</div>';
+            }
+            i++;
+        }
+    }
+    console.log(salio);
 }
+
 deploylist();
 var index = 0;
 
