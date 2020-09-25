@@ -47,7 +47,8 @@ function clearlist() {
     document.getElementById('table-body').innerHTML = '';
 }
 function clearlist1() {
-    document.getElementById('list-generate').innerHTML = '';
+    document.getElementById('col1').innerHTML = '';
+    document.getElementById('col2').innerHTML = '';
 }
 function showlist() {
     let button = document.getElementById('showlist');
@@ -84,23 +85,20 @@ function generateList(){
         if(salio.indexOf(list[nuevo]) != -1){
             console.log('ya salio');
         }else{
-            salio.push(list [nuevo]);             
+            salio.push(list [nuevo]);
         }
     }
     clearlist1();
     Mostrar(salio);
-    console.log(salio);
 }
 function Mostrar(salio){
-    var cont=0;
-    
     for(var i=0;i<list.length;i++){
-        document.getElementById('list-generate').innerHTML += 
-        '<div class="border margen letra">'+list[i]+'------->'+salio[i]+'</div>';
+        document.getElementById('col1').innerHTML += 
+        '<div class="border margen letra">'+list[i]+'</div>';
+
+        document.getElementById('col2').innerHTML += 
+        '<div class="border margen letra">'+salio[i]+'</div>';
     }
-  
- 
-    console.log(cont);
 }
 
 
