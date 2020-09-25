@@ -89,7 +89,6 @@ function generateList(){
     }
     clearlist1();
     Mostrar(salio);
-    console.log(salio);
 }
 function Mostrar(salio){
     for(var i=0;i<list.length;i++){
