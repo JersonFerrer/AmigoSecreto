@@ -47,7 +47,7 @@ function clearlist() {
     document.getElementById('table-body').innerHTML = '';
 }
 function clearlist1() {
-    document.getElementById('list-generate').innerHTML = '';
+    document.getElementById('col1').innerHTML = '';
 }
 function showlist() {
     let button = document.getElementById('showlist');
@@ -92,15 +92,13 @@ function generateList(){
     console.log(salio);
 }
 function Mostrar(salio){
-    var cont=0;
-    
     for(var i=0;i<list.length;i++){
-        document.getElementById('list-generate').innerHTML += 
-        '<div class="border margen letra">'+list[i]+'------->'+salio[i]+'</div>';
+        document.getElementById('col1').innerHTML += 
+        '<div class="border margen letra">'+list[i]+'</div>';
+
+        document.getElementById('col2').innerHTML += 
+        '<div class="border margen letra">'+salio[i]+'</div>';
     }
-  
- 
-    console.log(cont);
 }
 
 
