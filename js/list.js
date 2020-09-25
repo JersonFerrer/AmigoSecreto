@@ -85,7 +85,7 @@ function generateList(){
         if(salio.indexOf(list[nuevo]) != -1){
             console.log('ya salio');
         }else{
-            salio.push(list [nuevo]);             
+            salio.push(list [nuevo]);
         }
     }
     clearlist1();
