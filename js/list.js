@@ -30,6 +30,7 @@ var list = [
     "TANG CANTILLO JULIO CESAR",
     "VARELA MERCADO CARLOS ANDRES"
 ];
+
 var showList = true;
 var showNew = false;
 
@@ -43,7 +44,10 @@ function deploylist() {
     }
 }
 function clearlist() {
-    document.getElementById('table-body').innerHTML = '<div class="table-body"></div>';
+    document.getElementById('table-body').innerHTML = '';
+}
+function clearlist1() {
+    document.getElementById('list-generate').innerHTML = '';
 }
 function showlist() {
     let button = document.getElementById('showlist');
@@ -62,7 +66,6 @@ function showlist() {
 
 function showNewInput() {
     let New = document.getElementById('New');
-
     if(showNew){
         New.style.display='none';
         showNew=false;
@@ -71,29 +74,35 @@ function showNewInput() {
         showNew=true;
     }
 
-    var salio = [];
+}
+function generateList(){
+    var salio=[];
     var i=0;
     var listSize =  list.length;
-    console.log(listSize);
     while(salio.length < listSize){
         var nuevo = parseInt(Math.random()*listSize);
         if(salio.indexOf(list[nuevo]) != -1){
             console.log('ya salio');
         }else{
-            salio.push(list[nuevo]);
-            if(list[i] != salio[i]){
-                console.log(list[i]);
-                console.log(salio[i]);
-                console.log('--------------------------');
-
-                document.getElementById('gameContainer').innerHTML += 
-                '<div class="border">'+list[i]+'------>'+salio[i]+'</div>';
-            }
-            i++;
+            salio.push(list [nuevo]);             
         }
     }
+    clearlist1();
+    Mostrar(salio);
     console.log(salio);
 }
+function Mostrar(salio){
+    var cont=0;
+    
+    for(var i=0;i<list.length;i++){
+        document.getElementById('list-generate').innerHTML += 
+        '<div class="border margen letra">'+list[i]+'------->'+salio[i]+'</div>';
+    }
+  
+ 
+    console.log(cont);
+}
+
 
 deploylist();
 var index = 0;
