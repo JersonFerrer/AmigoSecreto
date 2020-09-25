@@ -48,6 +48,7 @@ function clearlist() {
 }
 function clearlist1() {
     document.getElementById('col1').innerHTML = '';
+    document.getElementById('col2').innerHTML = '';
 }
 function showlist() {
     let button = document.getElementById('showlist');
